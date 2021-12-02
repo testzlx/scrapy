@@ -96,6 +96,7 @@ def init_env(project='default', set_syspath=True):
 def get_config(use_closest=True):
     """Get Scrapy config file as a ConfigParser"""
     sources = get_sources(use_closest)
+    print("1:{}".format(sources))
     cfg = ConfigParser()
     cfg.read(sources)
     return cfg

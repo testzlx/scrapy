@@ -4,7 +4,6 @@ import optparse
 import cProfile
 import inspect
 import pkg_resources
-
 import scrapy
 from scrapy.crawler import CrawlerProcess
 from scrapy.commands import ScrapyCommand
@@ -121,6 +120,7 @@ def execute(argv=None, settings=None):
             settings['EDITOR'] = editor
 
     inproject = inside_project()
+    print("inproject:{}".format(inproject))
     cmds = _get_commands_dict(settings, inproject)
     cmdname = _pop_command_name(argv)
     parser = optparse.OptionParser(formatter=optparse.TitledHelpFormatter(),

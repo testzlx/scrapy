@@ -287,6 +287,7 @@ class BaseSettings(MutableMapping):
             module = import_module(module)
         for key in dir(module):
             if key.isupper():
+                print("key:{},value:{}".format(key, getattr(module, key)))
                 self.set(key, getattr(module, key), priority)
 
     def update(self, values, priority='project'):
